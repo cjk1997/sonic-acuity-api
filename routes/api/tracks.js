@@ -1,9 +1,9 @@
 const express = require('express');
-const router = express.Router;
+const router = express.Router();
 const getTracks = require('../../data/getTracks');
-const addTrack = require('../../data/addTrack');
-const updateTrack = require('../../data/updateTrack');
-const deleteTrack = require('../../data/deleteTrack')
+// const addTrack = require('../../data/addTrack');
+// const updateTrack = require('../../data/updateTrack');
+// const deleteTrack = require('../../data/deleteTrack')
 
 router.get('/', async function(req, res, next) {
     try {
@@ -14,3 +14,5 @@ router.get('/', async function(req, res, next) {
         res.send(500, "Internal Server Issue, check logs");
     };
 });
+
+module.exports = router;
