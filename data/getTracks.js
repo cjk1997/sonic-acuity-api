@@ -32,4 +32,24 @@ const getTracks = () => {
     return iou;
 };
 
+// const getTrackById = (id) => {
+//     const iou = new Promise((resolve, reject) => {
+//         MongoClient.connect(url, settings, function((err, client) => {
+        
+//         }
+//         })
+//     })
+//     return iou;
+// };
+
+// const getTrackByValue = (key, value) => {
+
+// };
+
 module.exports = getTracks;
+
+// module.exports = {
+    // getTracks,
+    // getTrackById,
+    // getTrackByValue
+// };
