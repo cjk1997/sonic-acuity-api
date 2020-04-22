@@ -29,7 +29,7 @@ const invalidTrack = (track) => {
 const addTrack = (tracks) => {
     const iou = new Promise((resolve, reject) => {
         if (!Array.isArray(tracks)) {
-            reject({ error: "Send an array of tracks." });
+            reject({ error: "Send an array of tracks" });
         } else {
             const invalidTracks = tracks.filter((track) => {
                 const check = invalidTrack(track);
@@ -40,7 +40,7 @@ const addTrack = (tracks) => {
             });
             if (invalidTracks.legth > 0) {
                 reject({
-                    error: "The tracks were invalid.",
+                    error: "The tracks were invalid",
                     data: invalidTracks
                 });
             } else {
@@ -48,11 +48,11 @@ const addTrack = (tracks) => {
                     if (err) {
                         reject(err);
                     } else {
-                        console.log("Connected successfully to server to POST tracks.");
+                        console.log("Connected successfully to server to POST tracks");
                         const db = client.db(dbName);
                         const collection = db.collection(colName);
                         tracks.forEach((track) => {
-                            track.dateAdded = new Date(Date.now()).toUTCString();
+                            track.date_added = new Date(Date.now()).toUTCString();
                         });
                         const results = await collection.insertMany(tracks);
                         resolve(results.ops);
